@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="Prueba-ingeneo" transaction-type="RESOURCE_LOCAL">
+		<class>pruebaingeneo.entidades.FormatoPelicula</class>
+		<class>pruebaingeneo.entidades.Sala</class>
+		<class>pruebaingeneo.entidades.Sucursal</class>
+		<class>pruebaingeneo.entidades.Ciudad</class>
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://ec2-50-17-255-120.compute-1.amazonaws.com:5432/d5pf7cl8rvni00"/>
+			<property name="javax.persistence.jdbc.user" value="hrugnxhbvyprww"/>
+			<property name="javax.persistence.jdbc.password" value="fd7c85773942fb50b3f0228c2ed7ad3aa50e26ee3e7fc173c05580a2d8860d44"/>
+			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+		</properties>
+	</persistence-unit>
+</persistence>
