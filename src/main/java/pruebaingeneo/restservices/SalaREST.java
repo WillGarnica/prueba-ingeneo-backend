@@ -42,7 +42,7 @@ public class SalaREST {
 		return iSalaDAO.save(sala);
 	}
 
-	@DeleteMapping("/")
+	@DeleteMapping("/{ideSala}")
 	public void remover(@PathVariable("ideSala") int ideSala ) {
 		iSalaDAO.deleteById(ideSala);
 	}
