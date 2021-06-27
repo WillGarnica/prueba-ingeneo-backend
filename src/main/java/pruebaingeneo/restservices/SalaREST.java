@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.databind.util.JSONPObject;
+import com.google.gson.Gson;
+
 import pruebaingeneo.daos.ISalaDAO;
 import pruebaingeneo.entidades.Sala;
 
@@ -30,11 +33,13 @@ public class SalaREST {
 
 	@PostMapping("/")
 	public Sala crear(@RequestBody Sala salaACrear) {
+		System.out.println("llega "+new Gson().toJson(salaACrear));
 		return iSalaDAO.save(salaACrear);
 	}
 
 	@PutMapping("/")
 	public Sala editar(@RequestBody Sala salaACrear) {
+		System.out.println("llega "+new Gson().toJson(salaACrear));
 		/* para editar utilice tambien el save ya que este opera como un merge */
 		return iSalaDAO.save(salaACrear);
 	}
