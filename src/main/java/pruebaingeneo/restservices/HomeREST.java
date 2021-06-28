@@ -17,7 +17,7 @@ public class HomeREST {
 
 	@GetMapping("/")
 	public String home() {
-		return "Servidor BackEnd para prueba de Ingeneo. Servidor arriba. Hora servidor: " + new Date();
+		return "{\"msj\":\"Servidor BackEnd para prueba de Ingeneo. Servidor arriba. Hora servidor: " + new Date() + "\"}";
 	}
 
 }
