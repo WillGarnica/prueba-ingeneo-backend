@@ -20,8 +20,8 @@ public class ClienteService {
 	}
 
 	public Cliente consultarPorID(long id) throws Exception {
-		Optional<Cliente> optionalClinte = clienteRepository.findById(id);
-		return optionalClinte.isEmpty() ? null : optionalClinte.get();
+		Optional<Cliente> optionalCliente = clienteRepository.findById(id);
+		return optionalCliente.isEmpty() ? null : optionalCliente.get();
 	}
 
 	public Cliente crear(Cliente cliente) throws Exception {
