@@ -1,4 +1,4 @@
-package pruebaingeneo.restservices;
+package pruebaingeneo.controllers;
 
 import java.util.List;
 
@@ -13,18 +13,16 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.google.gson.Gson;
-
-import pruebaingeneo.daos.ISalaDAO;
 import pruebaingeneo.entidades.Sala;
+import pruebaingeneo.repositorios.SalaRepository;
 
 @RestController
 @RequestMapping("sala")
 @CrossOrigin
-public class SalaREST {
+public class SalaController {
 
 	@Autowired
-	private ISalaDAO iSalaDAO;
+	private SalaRepository iSalaDAO;
 
 	@GetMapping("/")
 	public List<Sala> consultar() {

@@ -1,4 +1,4 @@
-package pruebaingeneo.restservices;
+package pruebaingeneo.controllers;
 
 import java.util.List;
 
@@ -8,20 +8,20 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import pruebaingeneo.daos.ISucursalDAO;
-import pruebaingeneo.entidades.Sucursal;
+import pruebaingeneo.entidades.Ciudad;
+import pruebaingeneo.repositorios.CiudadRepository;
 
 @RestController
-@RequestMapping("sucursal")
+@RequestMapping("ciudad")
 @CrossOrigin
-public class SucursalREST {
+public class CiudadController {
 
 	@Autowired
-	private ISucursalDAO Sucursal;
+	private CiudadRepository iCiudadDAO;
 
 	@GetMapping("/")
-	public List<Sucursal> consultar() {
-		return Sucursal.findAll();
+	public List<Ciudad> consultar() {
+		return iCiudadDAO.findAll();
 	}
 
 }

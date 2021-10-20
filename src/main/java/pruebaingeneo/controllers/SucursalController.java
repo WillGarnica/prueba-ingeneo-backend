@@ -1,6 +1,6 @@
-package pruebaingeneo.restservices;
+package pruebaingeneo.controllers;
 
-import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -8,16 +8,20 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import pruebaingeneo.entidades.Sucursal;
+import pruebaingeneo.repositorios.SucursalRepository;
+
 @RestController
-@RequestMapping("/")
+@RequestMapping("sucursal")
 @CrossOrigin
-public class HomeREST {
+public class SucursalController {
 
 	@Autowired
+	private SucursalRepository Sucursal;
 
 	@GetMapping("/")
-	public String home() {
-		return "{\"msj\":\"Servidor BackEnd para prueba de Ingeneo. Servidor arriba. Hora servidor: " + new Date() + "\"}";
+	public List<Sucursal> consultar() {
+		return Sucursal.findAll();
 	}
 
 }
